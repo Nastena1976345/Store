@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{%block styles%}
+<link rel="stylesheet" href="{% static 'css/product_instance.css' %}">
+{%endblock %}
+{% block main %}
+<section class = "product container">
+  <div class="product_wrapper">
+    <div class="img_wrapper">
+      <img src="{{product.productimg_set.first.image.url}}" alt="" class="product_img">
+    </div>
+    <div class="product_information">
+      <h2 class="product_title">
+        {{product.title}}
+      </h2>
+      <p class="product_price">
+        {{product.price}}
+      </p>
+      <a href="{%url 'add_to_cart' product.pk%}" class="add_to_cart">В корзину</a>
+    </div>
+  </div>
+  <div class="product_details_wrapper">
+    <h3 class="descriptions_title">Описание</h3>
+    <p class="product_descriptions">
+      {{product.descriptions}}
+    </p>
+  </div>
+</section>
+{%endblock%}

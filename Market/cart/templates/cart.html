@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{%block styles%}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{%endblock %}
+{% block main %}
+<section class="container">
+    <ul>
+        <p>Корзина</p>
+        {%for item in cart_items%}
+        <li class="cart_item">
+            <div class="product_img_wrapper">
+                <img src="{{item.product.productimg_set.first.image.url}}" alt="" class="product_img">
+            </div>
+            <div class="product_info">
+                <h2 class="product_title">{{item.product.title}}</h2>
+                <p class="product_description">
+                    {{item.product.description}}
+                </p>
+            </div>
+
+
+            <div class="btn_wrapper">
+                <div class="calc_quantity">
+                    <a href="{%url 'decrease_item' item.product.id%}" class="btn btn-outline-dark me-2">
+                        -
+                    </a>
+                    <span class="quantity">
+                        {{item.quantity}}
+                    </span>
+                    <a href="{%url 'increase_item' item.product.id%}" class="btn btn-outline-dark me-2">
+                        +
+                    </a>
+                </div>
+
+                <a class="btn btn-danger" href="{%url 'remove_from_cart' item.product.id%}">
+                    Удалить
+                </a>
+            </div>
+
+            <div class="price_cart">
+                <p>
+                    {{item.get_price}}
+                </p>
+            </div>
+
+        </li>
+        {%endfor%}
+        <button class="buy_btn">Купить</button>
+
+    </ul>
+
+</section>
+{%endblock%}
