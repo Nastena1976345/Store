@@ -9,15 +9,8 @@ class AdminInLineAndProductIMG(admin.TabularInline):
 
 
 class AdminProduct(admin.ModelAdmin):
-    fields = ["title", "price", "count", "product_type"]
+    fields = ["title", "price", "description", "count", "product_type"]
     inlines = [AdminInLineAndProductIMG]
 
 
 admin.site.register(Product, AdminProduct)
-# Register your models here.
-# a = {
-#    'Ширина (см)': 100,
-#    'Высота (см)': 200.6,
-#    'Глубина (см)': 37.2,
-#    'Цвет': "Белый",
-# }

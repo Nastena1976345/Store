@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock styles %}
+
+{% block main %}
+
+<section class="header-banner"
+         style="background: url('{% static 'images/main_banner.webp' %}') no-repeat center top / cover">
+</section>
+
+<section class="container text-content-block">
+
+    <div class="text-block-wrapper">
+
+        <h2 class="text-block-title">Lorem ipsum dolor.</h2>
+
+        <p class="text-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores blanditiis cum earum eos recusandae
+            rerum sequi similique tempora. Illo magnam quas quod saepe vero. Ab delectus dignissimos dolore dolorum in
+            ipsa ipsam modi, omnis quam quod sapiente soluta vero?
+        </p>
+
+        <a href="{% url 'product_list' %}" class="outline-btn">Перейти</a>
+    </div>
+
+</section>
+
+<section class="image-banner-section"
+         style="background: url('{% static 'images/second_bg.jpg' %}') no-repeat center/ cover ">
+
+    <div class="text-block">
+
+        <h2>Lorem ipsum dolor sit.</h2>
+
+        <p class="image-banner-text-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis eum molestias natus omnis
+            placeat quos recusandae repudiandae tempora voluptatum? Beatae debitis doloremque, enim harum illum in non
+            quis tempore?
+        </p>
+
+        <a href="{% url 'product_list' %}" class="outline-btn">Перейти</a>
+
+
+    </div>
+
+
+</section>
+
+
+{% endblock main %}

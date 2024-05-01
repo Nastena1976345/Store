@@ -5,50 +5,58 @@
 {%endblock %}
 {% block main %}
 <section class="container">
+    <h2>Корзина</h2>
+    <div class="sep-line"></div>
     <ul>
-        <p>Корзина</p>
         {%for item in cart_items%}
         <li class="cart_item">
             <div class="product_img_wrapper">
                 <img src="{{item.product.productimg_set.first.image.url}}" alt="" class="product_img">
             </div>
             <div class="product_info">
-                <h2 class="product_title">{{item.product.title}}</h2>
-                <p class="product_description">
-                    {{item.product.description}}
-                </p>
+                <h2 class="product_title">Lorem ipsum dolor sit.</h2>
             </div>
 
 
             <div class="btn_wrapper">
                 <div class="calc_quantity">
-                    <a href="{%url 'decrease_item' item.product.id%}" class="btn btn-outline-dark me-2">
-                        -
-                    </a>
-                    <span class="quantity">
+                    <div class="q-item">
+                        <a href="{%url 'decrease_item' item.product.id%}" class="quantity-link">
+                            -
+                        </a>
+                    </div>
+
+                    <div class="qq-item q-item">
+                        <span class="quantity">
                         {{item.quantity}}
                     </span>
-                    <a href="{%url 'increase_item' item.product.id%}" class="btn btn-outline-dark me-2">
-                        +
-                    </a>
+                    </div>
+
+                    <div class="q-item">
+                        <a href="{%url 'increase_item' item.product.id%}" class="quantity-link">
+                            +
+                        </a>
+                    </div>
+
+
                 </div>
 
-                <a class="btn btn-danger" href="{%url 'remove_from_cart' item.product.id%}">
-                    Удалить
-                </a>
             </div>
 
             <div class="price_cart">
                 <p>
-                    {{item.get_price}}
+                    {{item.get_price}} <span>₽</span>
                 </p>
+                <a href="{%url 'remove_from_cart' item.product.id%}">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
             </div>
 
         </li>
         {%endfor%}
-        <button class="buy_btn">Купить</button>
 
     </ul>
+    <button class="buy_btn">Купить</button>
 
 </section>
 {%endblock%}

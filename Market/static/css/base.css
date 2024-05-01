@@ -44,3 +44,13 @@ ul
     text-decoration: none;
 }
 
+
+.outline-btn {
+    padding: 6px 60px ;
+
+    color: #ababab;
+
+    text-decoration: none;
+
+    border: 2.1px solid #ababab;
+}

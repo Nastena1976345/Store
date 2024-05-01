@@ -14,15 +14,15 @@
         {{product.title}}
       </h2>
       <p class="product_price">
-        {{product.price}}
+        {{product.price}} <span>₽</span>
       </p>
-      <a href="{%url 'add_to_cart' product.pk%}" class="add_to_cart">В корзину</a>
+      <a href="{%url 'add_to_cart' product.pk%}" class="outline-btn">В корзину</a>
     </div>
   </div>
   <div class="product_details_wrapper">
     <h3 class="descriptions_title">Описание</h3>
     <p class="product_descriptions">
-      {{product.descriptions}}
+      {{product.description}}
     </p>
   </div>
 </section>

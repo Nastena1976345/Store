@@ -1,17 +1,19 @@
 {% extends 'core/base.html' %}
 {% load static %}
+
 {%block styles%}
 <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
 {%endblock %}
-{% block main %}
-<div class="all" >
-<section class="container" tyle="background-color: brown;">
-    <h1 class="h1_container">МЕБЕЛЬ</h1>
-    <ul class="product_list">
-        {% for p in products %}
 
-        {% if forloop.counter0|divisibleby:3 %}
-<!--        <div class="product_row">-->
+{% block main %}
+<div class="all">
+    <section class="container" tyle="background-color: brown;">
+        <h1 class="h1_container">МЕБЕЛЬ</h1>
+        <ul class="product_list">
+            {% for p in products %}
+
+            {% if forloop.counter0|divisibleby:3 %}
+            <!--        <div class="product_row">-->
             {% endif %}
 
             <li class="product_item product_item_normal">
@@ -21,31 +23,30 @@
                 <a href="{{p.get_absolute_url}}">
                     <h2 class="product_title">{{p.title}}</h2>
                 </a>
-                <p class="product_price">{{p.price}}</p>
-                <a href="{%url 'add_to_cart' p.pk%}" class="product_button">В корзину</a>
+                <p class="product_price">{{p.price}} <span>₽</span></p>
+                <a href="{%url 'add_to_cart' p.pk%}" class="outline-btn">В корзину</a>
             </li>
 
             {% if forloop.counter|divisibleby:3 or forloop.last %}
-<!--        </div>-->
-        {% endif %}
+            <!--        </div>-->
+            {% endif %}
 
-        {% endfor %}
-    </ul>
-</section>
-<section class="menu">
-    <nav>
-        <h4 class = "menu_katalog">Каталог</h4>
-        <ul class="name_menu">
-            {%for type in product_type%}
-            <li><a class="link1" href="{%url 'product_filter' type.pk%}">{{type.title}}</a></li>
-            {%endfor%}
-            <li><a class="link1" href="#">Шкафы</a></li>
-<!--            <li><a class="link2" href="#">Двери</a></li>-->
-<!--            <li><a class="link3" href="#">Столы</a></li>-->
-<!--            <li><a class="link4" href="#">Кровати</a></li>-->
+            {% endfor %}
         </ul>
-    </nav>
-</section>
+    </section>
+    <section class="menu">
+        <nav>
+            <h4 class="menu_katalog">Каталог</h4>
+            <ul class="name_menu">
+                {%for type in product_type%}
+                <li><a class="link1" href="{%url 'product_filter' type.pk%}">{{type.title}}</a></li>
+                {%endfor%}
+                <!--            <li><a class="link2" href="#">Двери</a></li>-->
+                <!--            <li><a class="link3" href="#">Столы</a></li>-->
+                <!--            <li><a class="link4" href="#">Кровати</a></li>-->
+            </ul>
+        </nav>
+    </section>
 </div>
 
 {% endblock %}
