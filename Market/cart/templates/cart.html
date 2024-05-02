@@ -5,7 +5,15 @@
 {%endblock %}
 {% block main %}
 <section class="container">
-    <h2>Корзина</h2>
+    <div class="cart-header">
+        <div class="title-wrapper">
+            <h2 class="cart-title">Корзина</h2>
+            <p class="secondary-text item-quantity">товаров в корзине: <span>{{ items_quantity }}</span></p>
+        </div>
+        <div class="total-price-wrapper">
+            <p class="total-price">Общая цена: <span>{{ total_price }}</span> <span>₽</span></p>
+        </div>
+    </div>
     <div class="sep-line"></div>
     <ul>
         {%for item in cart_items%}
@@ -56,7 +64,10 @@
         {%endfor%}
 
     </ul>
-    <button class="buy_btn">Купить</button>
+    <div class="btn-wrapper">
+        <button class="outline-btn buy_btn">Купить</button>
+
+    </div>
 
 </section>
 {%endblock%}

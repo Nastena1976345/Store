@@ -5,15 +5,34 @@
 {%endblock %}
 {% block main %}
 <section class="container">
-    <div class ="user_img_wrapper">
-        <img class ="user_img" src="{{profile.img.url}}">
+    <div class="user-data">
+        <div class="">
+            <div class="user_img_wrapper">
+                <img class="user_img" src="{{profile.img.url}}">
+            </div>
+
+        </div>
+
+        <div class="user-info">
+            <div class="u-info-header">
+                <h2>{{user.first_name}} {{user.last_name }}</h2>
+                <p class="secondary-text u-email">E-mail: <span>{{ user.email }}</span></p>
+            </div>
+
+            <div class="u-nav-menu">
+
+                <a class="outline-link" href="{%url 'change_profile'%}">
+                    Изменить данные
+                </a>
+                <a class="outline-link" href="{%url 'logout'%}">
+                    Выйти
+                </a>
+
+            </div>
+
+
+        </div>
+
     </div>
-    <h2>{{user.first_name}}</h2>
-    <a class = "btn btn-warning" href="{%url 'change_profile'%}">
-        Изменить данные
-    </a>
-    <a class = "btn btn-warning" href="{%url 'logout'%}">
-        Выйти
-    </a>
 </section>
 {%endblock%}

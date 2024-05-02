@@ -3,12 +3,22 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 {% endblock styles %}
 
 {% block main %}
 
 <section class="header-banner"
          style="background: url('{% static 'images/main_banner.jpg' %}') no-repeat center / cover">
+
+    <div class="welcome-text">
+        <h1 class="main-title">Sofa</h1>
+        <p class="secondary-text">интернет магазин мебели</p>
+    </div>
+
 </section>
 
 <section class="container text-content-block">

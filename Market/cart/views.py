@@ -7,7 +7,12 @@ from django.contrib.auth.decorators import login_required
 def cart_view(requests):
     cart_instance = Cart.objects.get(user=requests.user)
     cart_items = cart_instance.get_cart_items()
-    return render(requests, "cart.html", {"cart_items": cart_items})
+    ctx = {
+        "cart_items": cart_items,
+        "items_quantity": len(cart_items),
+        'total_price': cart_instance.get_total()
+    }
+    return render(requests, "cart.html", ctx)
 
 
 @login_required

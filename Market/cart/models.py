@@ -15,12 +15,12 @@ class CartItem(models.Model):
 
 
 class Cart(models.Model):
-    user = models.ForeignKey(user, on_delete=models.CASCADE)
+    user = models.ForeignKey(user, on_delete=models.CASCADE, related_name='cart')
 
     def add_to_cart(self, product, quantity=1):
         product = Product.objects.get(pk=product)
         item, created = CartItem.objects.get_or_create(product=product, cart=self)
-        if not created:
+        if not created and item.quantity < product.count:
             item.quantity += 1
             item.save()
 
@@ -41,4 +41,4 @@ class Cart(models.Model):
 
     def get_total(self):
         cart_items = self.get_cart_items()
-        return sum(item.get_price for item in cart_items)
+        return sum([item.get_price() for item in cart_items])

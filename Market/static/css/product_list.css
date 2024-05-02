@@ -93,7 +93,7 @@ address { font-style:normal }
     width: 100px;
     position: absolute;
     top: -5%;
-    left: 0;
+    left: 5%;
     transform: translateY(150%);
     background-color: white;
 
