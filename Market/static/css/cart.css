@@ -123,6 +123,12 @@ ul
     max-width: 400px;
 }
 
+.product_title a {
+    text-decoration: none;
+
+    color: #181818;
+}
+
 .item-quantity {
     padding: 0;
     margin: 0;

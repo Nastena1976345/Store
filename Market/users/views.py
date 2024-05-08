@@ -4,7 +4,8 @@ from django.contrib.auth import login, authenticate, logout
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 from cart.models import Cart
-from.forms import CustomUserChangeForm
+from .forms import CustomUserChangeForm
+
 
 def sign_up(requests):
     if requests.method == "POST":
@@ -37,7 +38,7 @@ def user_login(requests):
 
 def user_change(requests):
     if requests.method == "POST":
-        form = CustomUserChangeForm(requests.POST, instance=requests.user)
+        form = CustomUserChangeForm(requests.POST, requests.FILES, instance=requests.user)
         if form.is_valid():
             form.save()
             return redirect("profile")

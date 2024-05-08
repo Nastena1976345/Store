@@ -14,5 +14,5 @@ user = get_user_model()
 #        return f"User: {self.email} Id: {self.pk}"
 
 class Profile(models.Model):
-    user = models.ForeignKey(user, on_delete=models.CASCADE)
+    user = models.ForeignKey(user, on_delete=models.CASCADE, related_name='profile')
     img = models.ImageField(upload_to="users", default="users/default.jpg")

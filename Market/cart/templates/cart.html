@@ -22,8 +22,7 @@
                 <img src="{{item.product.productimg_set.first.image.url}}" alt="" class="product_img">
             </div>
             <div class="product_info">
-                <h2 class="product_title">{{item.product.title}}</h2>
-
+                <h2 class="product_title"><a href="{{ item.product.get_absolute_url }}">{{item.product.title}}</a></h2>
             </div>
 
 

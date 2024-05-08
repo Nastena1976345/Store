@@ -4,13 +4,20 @@
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 {%endblock %}
 {% block main %}
-<section class = "container">
-    <form method="post" action="">
-        <h2 class = "form_title">Регистрация</h2>
-        {%csrf_token%}
-        {{form}}
-        <button type="submit" class = "btn btn-warning">Зарегестрироваться</button>
-    </form>
+<section class="user-form-container"
+         style="background: url('{% static 'images/orig.webp' %}') no-repeat center / cover">
+
+    <div class="user-form">
+        <form method="post" action="">
+            <h2 class="form_title">Регистрация</h2>
+            {%csrf_token%}
+            {{form}}
+            <button type="submit" class="outline-btn">Зарегестрироваться</button>
+        </form>
+
+    </div>
+
+
 </section>
 
 

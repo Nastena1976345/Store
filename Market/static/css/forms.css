@@ -1,102 +1,63 @@
-form
-{
-    position: absolute;
-    width: 400px;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+form {
 
-    gap: 10px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 20px;
-  background-color: #ababab;
-  border-radius: 2px;
-  transition: .4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
 
-}
-form label 
-{
-    display: none;
-}
-form input:first-child
-{
-    /*content: "username";*/
-    color:red;
-    background-color: red;
-}
-form input
-{
-    margin-bottom: 20px;
+input {
+  height: 35px;
 
-    background: none;
   border: none;
+  background: none;
+
+  border-bottom: 1px solid #ababab;
+
   outline: none;
+}
+
+.outline-btn {
+  margin-top: 20px;
+}
+
+.user-form-container {
   width: 100%;
-  color: #d3d3d3;
+  height: 100vh;
+}
+
+.user-form {
+  position: absolute;
+
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+
+  width: 500px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  border-radius: 25px;
-  padding: 0.6em;
-  border: none;
-  outline: none;
-  color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  flex-direction: column;
 }
 
-.form_title
-{
-    text-align: center;
-  margin: 2em;
-  color: rgb(255, 255, 255);
-  font-size: 1.2em;
-}
-button
-{
-    padding: 0.5em;
-  padding-left: 1.1em;
-  padding-right: 1.1em;
-  border-radius: 5px;
-  margin-right: 0.5em;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
-}
-button:hover
-{
-    background-color: black;
-  color: white;
-}
-.helptext
-{
-    font-size: 10px;
-    color: white;
-}
-br
-{
-    display: none;
+.form_title {
+  text-transform: uppercase;
+  margin: 30px  auto;
+  letter-spacing: 5px;
 }
 
-.change_btn
-{
-    color: black;
-  text-decoration: none;
+label {
   font-size: 20px;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-bottom: 30px;
-  right: 30px;
+}
+
+.helptext {
+  display: none;
+}
+
+form {
+  width: 90%;
+
+  background-color: #ffffffc2;
+
+  border-radius: 10px;
+
+  padding: 50px;
 }

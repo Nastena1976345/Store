@@ -4,18 +4,26 @@
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 {%endblock %}
 {% block main %}
-<section class = "container">
-    <form method="post" action="">
-        <h2 class = "form_title">Изменить информацию</h2>
-        {%csrf_token%}
-        {{form}}
-        <button type="submit">Сохранить</button>
-    </form>
-    <div class="change_btn">
-        <a  href="{%url 'change_password'%}">
-    Изменить пароль
-  </a>
+
+<section class="user-form-container"
+         style="background: url('{% static 'images/orig.webp' %}') no-repeat center / cover">
+
+    <div class="user-form">
+        <form method="post" action="" enctype="multipart/form-data">
+            <h2 class="form_title">Изменить информацию</h2>
+            {%csrf_token%}
+            {{form}}
+            <button type="submit" class="outline-btn" style="margin-bottom: 20px;">Сохранить</button>
+            <a href="{%url 'change_password'%}" class="">
+                Изменить пароль
+            </a>
+
+        </form>
+
     </div>
 
+
 </section>
+
+
 {%endblock%}

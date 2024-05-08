@@ -92,13 +92,11 @@ address { font-style:normal }
 {
     width: 100px;
     position: absolute;
-    top: -5%;
+    top: 20%;
     left: 5%;
     transform: translateY(150%);
-    background-color: white;
-
-    
 }
+
 .name_menu
 {
     list-style: none;
