@@ -13,7 +13,6 @@
             {% for p in products %}
 
             {% if forloop.counter0|divisibleby:3 %}
-            <!--        <div class="product_row">-->
             {% endif %}
 
             <li class="product_item product_item_normal">
@@ -28,7 +27,6 @@
             </li>
 
             {% if forloop.counter|divisibleby:3 or forloop.last %}
-            <!--        </div>-->
             {% endif %}
 
             {% endfor %}
@@ -41,9 +39,6 @@
                 {%for type in product_type%}
                 <li><a class="link1" href="{%url 'product_filter' type.pk%}">{{type.title}}</a></li>
                 {%endfor%}
-                <!--            <li><a class="link2" href="#">Двери</a></li>-->
-                <!--            <li><a class="link3" href="#">Столы</a></li>-->
-                <!--            <li><a class="link4" href="#">Кровати</a></li>-->
             </ul>
         </nav>
     </section>
